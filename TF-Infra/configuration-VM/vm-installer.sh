@@ -19,15 +19,17 @@ aws --version
 # --------------------------
 # Install Terraform
 # --------------------------
-curl -fsSL https://apt.releases.hashicorp.com/gpg | \
-  sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
+# 1. Download and add HashiCorp GPG key
+wget -O- https://apt.releases.hashicorp.com/gpg | \
+  gpg --dearmor | sudo tee /usr/share/keyrings/hashicorp-archive-keyring.gpg > /dev/null
 
-echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] \
-  https://apt.releases.hashicorp.com $(lsb_release -cs) main" | \
-  sudo tee /etc/apt/sources.list.d/hashicorp.list
+# 2. Add the HashiCorp repository
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] \
+https://apt.releases.hashicorp.com $(lsb_release -cs) main" | \
+sudo tee /etc/apt/sources.list.d/hashicorp.list > /dev/null
 
-sudo apt-get update -y
-sudo apt-get install -y terraform
+# 3. Update package index and install Terraform
+sudo apt update && sudo apt install -y terraform
 terraform -version
 
 # --------------------------
