@@ -47,7 +47,7 @@ This 3-Tier DevSecOps project deploys a Node.js API and React client for a user 
   <img src="https://icon.icepanel.io/AWS/svg/Networking-Content-Delivery/Elastic-Load-Balancing.svg" alt="ELB" width="80">
 </a>
 <a href="https://www.hostinger.com/in">
-  <img src="https://images.seeklogo.com/logo-png/50/1/hostinger-logo-png_seeklogo-507102.png" alt="hostinger" width="80">
+  <img src="https://cdn.worldvectorlogo.com/logos/hostinger.svg" alt="hostinger" width="80">
 </a>
 
 ---
