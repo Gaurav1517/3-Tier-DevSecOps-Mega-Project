@@ -58,7 +58,7 @@ This 3-Tier DevSecOps project deploys a Node.js API and React client for a user 
 - **Instance Type**: t2.medium
 - **Key Pair**: `installer_vm`
 - **Security Group**: 
-  - **Inbound Rules**: Ports 80, 443 (HTTP, HTTPS)
+  - **Inbound Rules**: Ports 22, 80, 443, 53 (ssh, HTTP, HTTPS, DNS)
   - **Outbound Rules**: All traffic allowed
 - **Configuration Storage**: 25 GB
 
@@ -284,7 +284,7 @@ kubectl get nodes
 1. **Launch Virtual Machines:**
 
    * Jenkins & SonarQube servers are being provisioned on Ubuntu instances (`t2.medium`).
-   * Ensure the inbound rules for ports `80, 443, 8080, 9000` are allowed on the security group. This allows Jenkins UI (`8080`) and SonarQube UI (`9000`) to be accessible from the browser.
+   * Ensure the inbound rules for ports `80(http), 443(https), 8080(jenkins), 9000(sonarqube), 10250 (kubelet API), 30000-32767( NodePort services), 53 (DNS), 22(ssh)` are allowed on the security group. This allows Jenkins UI (`8080`) and SonarQube UI (`9000`) to be accessible from the browser.
 
 2. **SSH Access:**
 
