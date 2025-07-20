@@ -1,6 +1,6 @@
 # 3-Tier DevSecOps Project
 
-This 3-Tier DevSecOps project deploys a Node.js API and React client for a user management demo, utilizing EKS for container orchestration. Infrastructure is provisioned with Terraform, while security is integrated through SonarQube, Trivy, and GitLeaks for static code analysis and vulnerability scanning. A fully automated Jenkins CI/CD pipeline manages the build, test, and deployment stages, ensuring continuous delivery with robust security measures throughout the process. Additionally, the project includes DNS setup with HTTPS for secure, production-grade access to the application.
+This 3-Tier DevSecOps project deploys a Node.js API and React client for a user management, leveraging Amazon EKS for container orchestration. Infrastructure is provisioned using Terraform, and access to the Kubernetes cluster is secured via IAM-based RBAC. The Jenkins CI/CD pipeline automates build, test, and deployment stages with integrated code quality checks using SonarQube, Trivy, and GitLeaks for static code analysis and vulnerability scanning. SSL is configured via Let’s Encrypt to ensure secure communication, and DNS is set up using Hostinger with Kubernetes Ingress for production-grade HTTPS access.
 
 ### **Technologies & Tools Used**
 
